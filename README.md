@@ -38,6 +38,8 @@ status_code.200:1|c
 response_time:100|ms
 ```
 
+### Per route example
+
 However, it's **highly recommended** that you set `req.statsdKey` which
 will be used to namespace the stats. Be aware that stats will only be logged
 once a response has been sent; this means that `req.statsdKey` can be
@@ -71,6 +73,24 @@ A GET request to `/` on this server would produce the following stats:
 ```
 http.get.home.status_code.200:1|c
 http.get.home.response_time:100|ms
+```
+
+### Plain http example
+
+This module also works with any `http` server
+
+```js
+var http = require('http');
+var expressStatsd = require('express-statsd');
+
+var monitorRequest = expressStatsd();
+
+http.createServer(function (req, res) {
+    monitorRequest(req, res);
+
+    // do whatever you want, framework, library, router
+    res.end('hello world');
+}).listen(3000);
 ```
 
 ## Options
