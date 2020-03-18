@@ -1,5 +1,7 @@
 # express-statsd [![Build status](https://travis-ci.org/uber/express-statsd.png?branch=master)](https://travis-ci.org/uber/express-statsd)
 
+(This project is deprecated and not maintained.)
+
 [StatsD](https://github.com/etsy/statsd/) route monitoring middleware for 
 [Connect](https://github.com/senchalabs/connect)/[Express](https://github.com/visionmedia/express).
 This middleware can be used either globally or on a per-route basis (preferred)
